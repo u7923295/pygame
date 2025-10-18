@@ -13,10 +13,14 @@ dimensions, ``Vector2`` and ``Vector3`` respectively.
 
 They support the following numerical operations: ``vec + vec``, ``vec - vec``, 
 ``vec * number``, ``number * vec``, ``vec / number``, ``vec // number``, ``vec += vec``, 
-``vec -= vec``, ``vec *= number``, ``vec /= number``, ``vec //= number``, ``round(vec, ndigits=0)``. 
+``vec -= vec``, `vec *= vec`, ``vec *= number``, ``vec /= number``, ``vec //= number``, 
+``round(vec, ndigits=0)``. 
 
 All these operations will be performed elementwise.
-In addition ``vec * vec`` will perform a scalar-product (a.k.a. dot-product). 
+Note: ``vec += vec``, ``vec -= vec``, , ``vec *= number``, ``vec /= number``, operations
+will mutate the original Vector2 object, preserving the object identiy, while `vec *= vec` 
+and ``vec //= number`` will create a new object In addition ``vec * vec`` will perform a
+scalar-product (a.k.a. dot-product). 
 If you want to multiply every element from vector v with every element from 
 vector w you can use the elementwise method: ``v.elementwise() * w``
 
